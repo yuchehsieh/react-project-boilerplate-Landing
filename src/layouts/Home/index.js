@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/Header';
@@ -15,13 +16,33 @@ import '../../assets/vendor/bootstrap-icons/bootstrap-icons.css';
 import '../../assets/vendor/glightbox/css/glightbox.min.css';
 import '../../assets/vendor/remixicon/remixicon.css';
 import '../../assets/vendor/swiper/swiper-bundle.min.css';
-// import useScript from '../../util/useScript';
+import useScript from '../../util/useScript';
+
+const scripts = [
+    'assets/vendor/purecounter/purecounter.js',
+    'assets/vendor/aos/aos.js',
+    'assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
+    'assets/vendor/glightbox/js/glightbox.min.js',
+    'assets/vendor/isotope-layout/isotope.pkgd.min.js',
+    'assets/vendor/swiper/swiper-bundle.min.js',
+    'assets/vendor/php-email-form/validate.js',
+    'assets/js/main.js',
+];
 
 const Home = () => {
     const [isDone, setIsDone] = useState(false);
 
     useEffect(() => {
-        setIsDone(true);
+        setTimeout(() => setIsDone(true), []);
+
+        // scripts.forEach((url) => {
+        //     const script = document.createElement('script');
+
+        //     script.src = url;
+        //     script.async = true;
+
+        //     document.body.appendChild(script);
+        // });
     }, []);
     // useScript('assets/vendor/purecounter/purecounter.js');
     // useScript('assets/vendor/aos/aos.js');
@@ -38,17 +59,49 @@ const Home = () => {
 
     return (
         <div>
+            {isDone && (
+                <Helmet>
+                    <script src="assets/vendor/purecounter/purecounter.js"></script>
+                    <script src="assets/vendor/aos/aos.js"></script>
+                    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+                    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+                    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+                    <script src="assets/vendor/php-email-form/validate.js"></script>
+                    <script src="assets/js/main.js"></script>
+                </Helmet>
+            )}
             <Helmet>
-                <script src="assets/vendor/purecounter/purecounter.js"></script>
-                <script src="assets/vendor/aos/aos.js"></script>
-                <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-                <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-                <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-                <script src="assets/vendor/php-email-form/validate.js"></script>
+                <link
+                    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+                    rel="stylesheet"
+                />
 
-                <script src="assets/js/main.js"></script>
+                <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+                <link
+                    href="assets/vendor/bootstrap/css/bootstrap.min.css"
+                    rel="stylesheet"
+                />
+                <link
+                    href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+                    rel="stylesheet"
+                />
+                <link
+                    href="assets/vendor/glightbox/css/glightbox.min.css"
+                    rel="stylesheet"
+                />
+                <link
+                    href="assets/vendor/remixicon/remixicon.css"
+                    rel="stylesheet"
+                />
+                <link
+                    href="assets/vendor/swiper/swiper-bundle.min.css"
+                    rel="stylesheet"
+                />
+
+                <link href="assets/css/style.css" rel="stylesheet" />
             </Helmet>
+
             <Header />
 
             <header id="header" className="header fixed-top">
@@ -194,7 +247,11 @@ const Home = () => {
                             data-aos="zoom-out"
                             data-aos-delay="200"
                         >
-                            <img src={HeroImg} className="img-fluid" alt="" />
+                            <img
+                                src="assets/img/hero-img.png"
+                                className="img-fluid"
+                                alt=""
+                            />
                         </div>
                     </div>
                 </div>
