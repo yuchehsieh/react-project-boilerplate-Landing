@@ -1,8 +1,10 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Header from '../../components/Header';
 
-import styles from './styles.module.scss';
+import HeroImg from '../../assets/img/hero-img.png';
+
+// import styles from './styles.module.scss';
 
 // Template Main CSS File
 import '../../assets/css/style.css';
@@ -13,22 +15,42 @@ import '../../assets/vendor/bootstrap-icons/bootstrap-icons.css';
 import '../../assets/vendor/glightbox/css/glightbox.min.css';
 import '../../assets/vendor/remixicon/remixicon.css';
 import '../../assets/vendor/swiper/swiper-bundle.min.css';
-
-import '../../assets/vendor/purecounter/purecounter.js';
-import '../../assets/vendor/aos/aos.js';
-import '../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js';
-import '../../assets/vendor/glightbox/js/glightbox.min.js';
-import '../../assets/vendor/isotope-layout/isotope.pkgd.min.js';
-import '../../assets/vendor/swiper/swiper-bundle.min.js';
-import '../../assets/vendor/php-email-form/validate.js';
-import '../../assets/js/main.js';
+// import useScript from '../../util/useScript';
 
 const Home = () => {
+    const [isDone, setIsDone] = useState(false);
+
+    useEffect(() => {
+        setIsDone(true);
+    }, []);
+    // useScript('assets/vendor/purecounter/purecounter.js');
+    // useScript('assets/vendor/aos/aos.js');
+    // useScript('assets/vendor/bootstrap/js/bootstrap.bundle.min.js');
+    // useScript('assets/vendor/glightbox/js/glightbox.min.js');
+    // useScript('assets/vendor/isotope-layout/isotope.pkgd.min.js');
+    // useScript('assets/vendor/swiper/swiper-bundle.min.js');
+    // useScript('assets/vendor/php-email-form/validate.js');
+    // useScript('assets/js/main.js');
+
+    if (!isDone) {
+        return <div>...</div>;
+    }
+
     return (
-        <div className={styles.container}>
+        <div>
+            <Helmet>
+                <script src="assets/vendor/purecounter/purecounter.js"></script>
+                <script src="assets/vendor/aos/aos.js"></script>
+                <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+                <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+                <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+                <script src="assets/vendor/php-email-form/validate.js"></script>
+
+                <script src="assets/js/main.js"></script>
+            </Helmet>
             <Header />
 
-            {/* <!-- ======= Header ======= --> */}
             <header id="header" className="header fixed-top">
                 <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
                     <a
@@ -140,12 +162,9 @@ const Home = () => {
                         </ul>
                         <i className="bi bi-list mobile-nav-toggle"></i>
                     </nav>
-                    {/* <!-- .navbar --> */}
                 </div>
             </header>
-            {/* <!-- End Header --> */}
 
-            {/* <!-- ======= Hero Section ======= --> */}
             <section id="hero" className="hero d-flex align-items-center">
                 <div className="container">
                     <div className="row">
@@ -175,20 +194,14 @@ const Home = () => {
                             data-aos="zoom-out"
                             data-aos-delay="200"
                         >
-                            <img
-                                src="assets/img/hero-img.png"
-                                className="img-fluid"
-                                alt=""
-                            />
+                            <img src={HeroImg} className="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
             </section>
-            {/* <!-- End Hero --> */}
 
             <main id="main">
-                {/* <!-- ======= About Section ======= --> */}
-                {/* <section id="about" className="about">
+                <section id="about" className="about">
                     <div className="container" data-aos="fade-up">
                         <div className="row gx-0">
                             <div
@@ -235,10 +248,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </section> */}
-                {/* <!-- End About Section --> */}
+                </section>
 
-                {/* <!-- ======= Values Section ======= --> */}
                 {/* <section id="values" className="values">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
@@ -308,11 +319,9 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </section> */}
-                {/* <!-- End Values Section --> */}
+                </section>
 
-                {/* <!-- ======= Counts Section ======= --> */}
-                {/* <section id="counts" className="counts">
+                <section id="counts" className="counts">
                     <div className="container" data-aos="fade-up">
                         <div className="row gy-4">
                             <div className="col-lg-3 col-md-6">
@@ -385,10 +394,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </section> */}
-                {/* <!-- End Counts Section --> */}
+                </section>
 
-                {/* <!-- ======= Features Section ======= --> */}
                 <section id="features" className="features">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
@@ -477,9 +484,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* <!-- / row --> */}
 
-                        {/* <!-- Feature Tabs --> */}
                         <div className="row feture-tabs" data-aos="fade-up">
                             <div className="col-lg-6">
                                 <h3>
@@ -488,7 +493,6 @@ const Home = () => {
                                     claero
                                 </h3>
 
-                                {/* <!-- Tabs --> */}
                                 <ul className="nav nav-pills mb-3">
                                     <li>
                                         <a
@@ -518,9 +522,7 @@ const Home = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                {/* <!-- End Tabs --> */}
 
-                                {/* <!-- Tab Content --> */}
                                 <div className="tab-content">
                                     <div
                                         className="tab-pane fade show active"
@@ -563,7 +565,6 @@ const Home = () => {
                                             perferendis.
                                         </p>
                                     </div>
-                                    {/* <!-- End Tab 1 Content --> */}
 
                                     <div
                                         className="tab-pane fade show"
@@ -606,7 +607,6 @@ const Home = () => {
                                             perferendis.
                                         </p>
                                     </div>
-                                    {/* <!-- End Tab 2 Content --> */}
 
                                     <div
                                         className="tab-pane fade show"
@@ -649,7 +649,6 @@ const Home = () => {
                                             perferendis.
                                         </p>
                                     </div>
-                                    {/* <!-- End Tab 3 Content --> */}
                                 </div>
                             </div>
 
@@ -661,9 +660,7 @@ const Home = () => {
                                 />
                             </div>
                         </div>
-                        {/* <!-- End Feature Tabs --> */}
 
-                        {/* <!-- Feature Icons --> */}
                         <div className="row feature-icons" data-aos="fade-up">
                             <h3>
                                 Ratione mollitia eos ab laudantium rerum beatae
@@ -786,13 +783,10 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* <!-- End Feature Icons --> */}
                     </div>
                 </section>
-                {/* <!-- End Features Section --> */}
 
-                {/* <!-- ======= Services Section ======= --> */}
-                {/* <section id="services" className="services">
+                <section id="services" className="services">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
                             <h2>Services</h2>
@@ -926,11 +920,9 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </section> */}
-                {/* <!-- End Services Section --> */}
+                </section>
 
-                {/* <!-- ======= Pricing Section ======= --> */}
-                {/* <section id="pricing" className="pricing">
+                <section id="pricing" className="pricing">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
                             <h2>Pricing</h2>
@@ -1062,10 +1054,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </section> */}
-                {/* <!-- End Pricing Section --> */}
+                </section>
 
-                {/* <!-- ======= F.A.Q Section ======= --> */}
                 <section id="faq" className="faq">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
@@ -1075,7 +1065,6 @@ const Home = () => {
 
                         <div className="row">
                             <div className="col-lg-6">
-                                {/* <!-- F.A.Q List 1--> */}
                                 <div
                                     className="accordion accordion-flush"
                                     id="faqlist1"
@@ -1179,7 +1168,6 @@ const Home = () => {
                             </div>
 
                             <div className="col-lg-6">
-                                {/* <!-- F.A.Q List 2--> */}
                                 <div
                                     className="accordion accordion-flush"
                                     id="faqlist2"
@@ -1285,10 +1273,8 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                {/* <!-- End F.A.Q Section --> */}
 
-                {/* <!-- ======= Portfolio Section ======= --> */}
-                {/* <section id="portfolio" className="portfolio">
+                <section id="portfolio" className="portfolio">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
                             <h2>Portfolio</h2>
@@ -1591,10 +1577,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </section> */}
-                {/* <!-- End Portfolio Section --> */}
+                </section>
 
-                {/* <!-- ======= Testimonials Section ======= --> */}
                 <section id="testimonials" className="testimonials">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
@@ -1636,7 +1620,6 @@ const Home = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <!-- End testimonial item --> */}
 
                                 <div className="swiper-slide">
                                     <div className="testimonial-item">
@@ -1666,7 +1649,6 @@ const Home = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <!-- End testimonial item --> */}
 
                                 <div className="swiper-slide">
                                     <div className="testimonial-item">
@@ -1695,7 +1677,6 @@ const Home = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <!-- End testimonial item --> */}
 
                                 <div className="swiper-slide">
                                     <div className="testimonial-item">
@@ -1725,7 +1706,6 @@ const Home = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <!-- End testimonial item --> */}
 
                                 <div className="swiper-slide">
                                     <div className="testimonial-item">
@@ -1755,15 +1735,12 @@ const Home = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <!-- End testimonial item --> */}
                             </div>
                             <div className="swiper-pagination"></div>
                         </div>
                     </div>
                 </section>
-                {/* <!-- End Testimonials Section --> */}
 
-                {/* <!-- ======= Team Section ======= --> */}
                 <section id="team" className="team">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
@@ -1938,9 +1915,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                {/* <!-- End Team Section --> */}
 
-                {/* <!-- ======= Clients Section ======= --> */}
                 <section id="clients" className="clients">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
@@ -2011,9 +1986,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                {/* <!-- End Clients Section --> */}
 
-                {/* <!-- ======= Recent Blog Posts Section ======= --> */}
                 <section id="recent-blog-posts" className="recent-blog-posts">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
@@ -2101,9 +2074,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                {/* <!-- End Recent Blog Posts Section --> */}
 
-                {/* <!-- ======= Contact Section ======= --> */}
                 <section id="contact" className="contact">
                     <div className="container" data-aos="fade-up">
                         <header className="section-header">
@@ -2227,23 +2198,17 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </section>
-                {/* <!-- End Contact Section --> */}
+                </section> */}
             </main>
-            {/* <!-- End #main --> */}
 
-            {/* <!-- ======= Footer ======= --> */}
-
-            {/* <!-- End Footer --> */}
-            {/* <a
+            <a
                 href="#"
                 className="back-to-top d-flex align-items-center justify-content-center"
             >
                 <i className="bi bi-arrow-up-short"></i>
-            </a> */}
+            </a>
 
-            {/* <!-- Vendor JS Files --> */}
-            <script src="assets/vendor/purecounter/purecounter.js"></script>
+            {/* <script src="assets/vendor/purecounter/purecounter.js"></script>
             <script src="assets/vendor/aos/aos.js"></script>
             <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
             <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -2251,7 +2216,7 @@ const Home = () => {
             <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
             <script src="assets/vendor/php-email-form/validate.js"></script>
 
-            <script src="assets/js/main.js"></script>
+            <script src="assets/js/main.js"></script> */}
         </div>
     );
 };
