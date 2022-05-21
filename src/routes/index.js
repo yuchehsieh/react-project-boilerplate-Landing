@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { ROUTE_PATH, ROLES } from '../constants/';
 
-import HomePage from '../layouts/Home';
+import HomePage from '../layouts/Home2';
 import Page1 from '../layouts/Page1';
 import PageWithParams from '../layouts/PageWithParams';
 import ProtectedRoutes from './ProtectedRoutes';
