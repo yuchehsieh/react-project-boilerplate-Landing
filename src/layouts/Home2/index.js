@@ -3,7 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
-import Portfolio from '../../components/Home2/Portfolio';
+import Portfolio from './components/Portfolio';
 
 import '../../assets2/css/bootstrap.min.css';
 import '../../assets2/css/agency.min.css';

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
@@ -17,11 +18,20 @@ import RecordList from '../layouts/RecordList';
 
 // Landing Page
 import Home2 from '../layouts/Home2';
+import Home3 from '../layouts/Home3';
+import Home3_CommingSoon from '../layouts/Home3/views/coming-soon';
+import Home3_Profile from '../layouts/Home3/views/profile';
+import Home3_Home from '../layouts/Home3/views/home';
 
 const AppRoutes = () => {
     return (
         <Routes>
             <Route path={ROUTE_PATH.home} element={<Home2 />} />
+            <Route path="/home3" element={<Home3 />}>
+                <Route element={<Home3_Home />} path="" />
+                <Route element={<Home3_CommingSoon />} path="coming-soon" />
+                <Route exact element={<Home3_Profile />} path="profile" />
+            </Route>
             <Route path={ROUTE_PATH.sign_in} element={<SignIn />} />
             <Route path={ROUTE_PATH.unauthorized} element={<Unauthorized />} />
 
