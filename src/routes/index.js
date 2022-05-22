@@ -15,7 +15,7 @@ import DifficulityList from '../layouts/DifficulityList';
 import FinishedWorkout from '../layouts/FinishedWorkout';
 import RecordList from '../layouts/RecordList';
 
-// Landing
+// Landing Page
 import Home2 from '../layouts/Home2';
 
 const AppRoutes = () => {

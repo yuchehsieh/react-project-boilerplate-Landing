@@ -1,12 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-// import logo from './logo.svg';
 import { Helmet } from 'react-helmet';
+import { Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
 import Portfolio from '../../components/Home2/Portfolio';
 
 import '../../assets2/css/bootstrap.min.css';
 import '../../assets2/css/agency.min.css';
+import '../../assets2/css/styles.css';
 
 const Home2 = () => {
     const portfolioLinks = [
@@ -50,9 +51,12 @@ const Home2 = () => {
                 {/* <link rel="stylesheet" href="assets2/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="assets2/css/agency.min.css" /> */}
             </Helmet>
-            <nav
+            <Navbar
                 className="navbar navbar-expand-lg navbar-dark fixed-top"
                 id="mainNav"
+                expand="lg"
+                bg="dark"
+                collapseOnSelect={true}
             >
                 <div className="container">
                     <a
@@ -61,19 +65,44 @@ const Home2 = () => {
                     >
                         Start Bootstrap
                     </a>
-                    <button
-                        className="navbar-toggler navbar-toggler-right"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarResponsive"
-                        aria-controls="navbarResponsive"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
+                    <Navbar.Toggle aria-controls="basic-navbar-nav">
                         Menu
                         <i className="fa fa-bars"></i>
-                    </button>
-                    <div
+                    </Navbar.Toggle>
+                    <Navbar.Collapse>
+                        <Nav
+                            className="me-auto text-uppercase align-items-center"
+                            style={{ justifyContent: 'flex-end', flex: 1 }}
+                        >
+                            <Nav.Link href="#services">Services</Nav.Link>
+                            <Nav.Link href="#portfolio">Portfolio</Nav.Link>
+                            <Nav.Link href="#about">About</Nav.Link>
+                            <Nav.Link href="#team">Team</Nav.Link>
+                            <Nav.Link href="#contact">Contact</Nav.Link>
+                            <NavDropdown
+                                title="Actions"
+                                id="basic-nav-dropdown"
+                            >
+                                <NavDropdown.Item
+                                    href="#services"
+                                    className="text-uppercase ml-auto"
+                                >
+                                    Services
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">
+                                    Another action
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">
+                                    Something
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.4">
+                                    Separated link
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                    </Navbar.Collapse>
+                    {/* <div
                         className="collapse navbar-collapse"
                         id="navbarResponsive"
                     >
@@ -119,9 +148,9 @@ const Home2 = () => {
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
-            </nav>
+            </Navbar>
 
             <header className="masthead">
                 <div className="container">

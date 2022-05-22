@@ -57,7 +57,8 @@ const SignIn = () => {
     };
 
     return (
-        <Layout>
+        <Layout style={{ padding: 0 }}>
+            {/*  style={{ padding: 0 }} is made for solving css conflict */}
             <Content className="site-layout" style={{ padding: '24px' }}>
                 <div className={styles.container}>
                     <Form
