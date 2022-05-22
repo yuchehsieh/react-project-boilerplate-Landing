@@ -1,11 +1,14 @@
-export default {
+const ROUTE_PATH = {
     home: '/',
-    page1: '/page1',
-    page_with_params: '/params',
-
-    unauthorized: '/unauthorized',
-
     sign_in: '/sign-in',
-    admin_dashbaord: '/admin-dashboard',
-    editor_product: '/editor-product',
+    unauthorized: '/unauthorized',
+    admin_dashbaord: '/dashboard',
+    prepare_workout: '/prepare-workout',
+    monitoring_workout: '/monitoring-workout',
+    user_list: '/user-list',
+    difficulty_list: '/difficulty-list',
+    record_list: '/record-list',
+    finsished_workout: '/finished-workout',
 };
+
+export default ROUTE_PATH;

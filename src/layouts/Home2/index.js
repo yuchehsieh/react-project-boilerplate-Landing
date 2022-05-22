@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 // import logo from './logo.svg';
+import { Helmet } from 'react-helmet';
+
 import Portfolio from '../../components/Home2/Portfolio';
 
 import '../../assets2/css/bootstrap.min.css';
@@ -40,6 +42,14 @@ const Home2 = () => {
 
     return (
         <div className="App">
+            <Helmet>
+                <link
+                    rel="stylesheet"
+                    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                />
+                {/* <link rel="stylesheet" href="assets2/css/bootstrap.min.css" />
+                <link rel="stylesheet" href="assets2/css/agency.min.css" /> */}
+            </Helmet>
             <nav
                 className="navbar navbar-expand-lg navbar-dark fixed-top"
                 id="mainNav"
@@ -505,10 +515,7 @@ const Home2 = () => {
                     </div>
                     <div className="row">
                         <div className="col-lg-12">
-                            <form
-                                id="contactForm"
-                                name="sentMessage"
-                            >
+                            <form id="contactForm" name="sentMessage">
                                 <div className="row">
                                     <div className="col-md-6">
                                         <div className="form-group">

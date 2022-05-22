@@ -2,12 +2,14 @@ import { createContext, useReducer, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { SET_AUTH } from './actions';
 
+import { ROLES } from '../constants';
+
 const StoreContext = createContext();
 
 const initialState = {
     auth: {
         isValid: true,
-        roles: [1984], // 1984: Editor ; 5150: Admin
+        roles: [ROLES.Editor], // 1984: Editor ; 5150: Admin
     },
 };
 
