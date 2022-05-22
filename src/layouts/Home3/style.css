@@ -42,6 +42,12 @@
   --dl-space-space-unitandahalfunit: 1.5rem;
   --dl-space-space-triplequarterunit: 0.75rem;
 }
+
+html {
+  font-family: Open Sans;
+  font-size: 1rem;
+}
+
 .teleport-show {
   display: flex !important;
 }
